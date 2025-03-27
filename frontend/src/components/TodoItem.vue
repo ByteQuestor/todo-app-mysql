@@ -69,9 +69,9 @@ const todoCompletedLocal = computed({
         @change="toggleTodoCompleted(todoId, todoCompletedLocal)"
         :classes="{
           container:
-            'inline-block w-[70px] rounded-full outline-none focus:ring focus:ring-grey-400 focus:ring-opacity-30',
+            'inline-block w-[70px] rounded-full outline-none focus:ring-2 focus:ring-slate-400 focus:ring-opacity-30',
           toggle:
-            'flex w-full h-5 rounded-full relative cursor-pointer transition items-center box-content border-1 text-xs leading-none',
+            'flex w-[68px] h-5 rounded-full relative cursor-pointer transition items-center box-content border-1 text-xs leading-none',
           toggleOn: 'bg-gray-400 border-gray-400 justify-start text-gray-800',
           toggleOff: 'bg-gray-200 border-gray-200 justify-end text-gray-700',
           toggleOnDisabled:

@@ -1,19 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-[data-theme='dark'] {
-  --bg-color1: #121416;
-  --font-color: #f4f4f4;
-}
-[data-theme='light'] {
-  --bg-color1: #f4f4f4;
-  --font-color: #121416;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme static {
+  --color-primary: var(--color-blue-700);
+  --color-secondary: var(--color-blue-700);
+  --color-primary-ring: var(--color-blue-300);
+  --color-primary-ring: var(--color-blue-700);
 }
 
-body {
-  background-color: var(--bg-color1);
-  color: var(--font-color);
+@layer base {
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 .or {
