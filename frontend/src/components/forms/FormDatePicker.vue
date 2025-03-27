@@ -59,7 +59,7 @@ const value = computed({
       <div class="flex flex-end items-baseline flex-row justify-start">
         <label
           :for="props.name"
-          class="block mb-2 text-sm font-normal mr-2"
+          class="block mb-2 text-sm font-normal mr-2 w-[60px]"
           :class="error ? 'text-rose-700 dark:text-rose-700' : 'text-gray-900 dark:text-white'"
           >Pour le :</label
         >

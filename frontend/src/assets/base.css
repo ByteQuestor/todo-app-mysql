@@ -3,10 +3,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme static {
+
+  --font-display: "Satoshi", "sans-serif";
+
   --color-primary: var(--color-blue-700);
+  
   --color-secondary: var(--color-blue-700);
+  
   --color-primary-ring: var(--color-blue-300);
-  --color-primary-ring: var(--color-blue-700);
+  /* --color-primary-ring: var(--color-blue-700); */
+
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
 }
 
 @layer base {
@@ -66,8 +83,6 @@ label {
 }
 
 input {
-  width: 100%;
-  padding: 8px;
   box-sizing: border-box;
 }
 

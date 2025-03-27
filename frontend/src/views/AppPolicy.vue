@@ -1,11 +1,11 @@
 <template>
   <div class="px-4 sm:px-6 lg:px-8">
     <div class="relative mx-auto max-w-[37.5rem] pt-20 text-center pb-24">
-      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
+      <h1 class="text-4xl tracking-tight text-slate-900 sm:text-5xl dark:text-white">
         Politique de confidentialité
       </h1>
       <p class="mt-4 text-base/7 text-slate-600 dark:text-gray-400">
-        Dernière mise à jour le 21 décembre 2024
+        Dernière mise à jour le 27 mars 2025
       </p>
     </div>
   </div>
@@ -14,8 +14,8 @@
       class="mx-auto max-w-[40rem] prose prose-sm prose-slate prose-a:font-semibold prose-a:text-sky-500 prose-a:no-underline prose-a:hover:text-sky-600 prose-code:text-[13px]/[1.692] prose-pre:rounded-lg prose-pre:px-4 prose-pre:py-[0.875rem] dark:text-white"
     >
       <p>
-        Cette politique de confidentialité (« Politique ») décrit comment Matinfo Labs Inc. («
-        Matinfo », « nous », « notre » ou « nos ») collecte, protège et utilise les informations
+        Cette politique de confidentialité (« Politique ») décrit comment Matinfo Labs. Labs Inc. («
+        Matinfo Labs. », « nous », « notre » ou « nos ») collecte, protège et utilise les informations
         personnelles identifiables (« Informations personnelles ») que vous (« Utilisateur », « vous
         » ou « votre ») pouvez fournir via le site TodoApp (todoapp.com). La Politique décrit
         également les choix qui s'offrent à vous concernant notre utilisation de vos Informations
@@ -43,12 +43,11 @@
       <h2>Achats</h2>
       <p>
         Tous les achats effectués via le site Web sont traités par un processeur de paiement tiers,
-        Paddle ( <a href="https://paddle.com">paddle.com</a> ). Paddle peut vous demander des
+        Paddle (<a href="https://paddle.com">paddle.com</a>). Paddle peut vous demander des
         informations personnelles et/ou non personnelles, telles que votre nom, votre adresse, votre
         adresse e-mail, vos informations de carte de crédit ou d'autres informations personnelles.
-        Paddle a une politique de confidentialité (
-        <a href="https://paddle.com/legal-buyers/">paddle.com/legal-buyers/</a> ) qui décrit sa
-        collecte et son utilisation des informations personnelles. Matinfo ne contrôle pas Paddle ni
+        Paddle a une politique de confidentialité (<a href="https://paddle.com/legal-buyers/">paddle.com/legal-buyers/</a>) 
+        qui décrit sa collecte et son utilisation des informations personnelles. Matinfo Labs. ne contrôle pas Paddle ni
         sa collecte ou son utilisation des informations. Toute question ou préoccupation concernant
         les pratiques de Paddle doit être adressée à Paddle.
       </p>
@@ -160,10 +159,9 @@
       <h2>Comment exercer ces droits</h2>
       <p>
         Toute demande d'exercice des droits de l'Utilisateur peut être adressée au Propriétaire par
-        courrier électronique à l'
-        <a href="mailto:support@todoapp.com">adresse support@todoapp.com</a> . Ces demandes peuvent
-        être exercées gratuitement et seront étudiées par le Propriétaire le plus tôt possible et
-        toujours dans un délai d'un mois.
+        courrier électronique à l'<a href="mailto:support@todoapp.com">adresse support@todoapp.com</a>. 
+        Ces demandes peuvent être exercées gratuitement et seront étudiées par le Propriétaire le 
+        plus tôt possible et toujours dans un délai d'un mois.
       </p>
       <h2>Vie privée des enfants</h2>
       <p>
@@ -216,8 +214,7 @@
         En particulier, comme indiqué ci-dessus, les achats effectués via le site Web sont gérés par
         Paddle et toutes ces transactions, y compris les informations personnelles ou non
         personnelles collectées par Paddle, sont sous le contrôle de Paddle. Nous encourageons les
-        acheteurs à lire la politique de confidentialité de Paddle (
-        <a href="https://paddle.com/legal-buyers/">paddle.com/legal-buyers/</a> ).
+        acheteurs à lire la politique de confidentialité de Paddle (<a href="https://paddle.com/legal-buyers/">paddle.com/legal-buyers/</a>).
       </p>
       <h2>Sécurité de l'information</h2>
       <p>
@@ -275,8 +272,7 @@
       </p>
       <h2>Nous contacter</h2>
       <p>
-        Si vous avez des questions sur cette politique, veuillez nous contacter par e-mail à
-        <a href="mailto:support@todoapp.com">support@todoapp.com</a> .
+        Si vous avez des questions sur cette politique, veuillez nous contacter par e-mail à <a href="mailto:support@todoapp.com">support@todoapp.com</a>.
       </p>
     </div>
   </div>
@@ -288,6 +284,9 @@ h2 {
   margin-bottom: 0.4em;
   font-size: 1.42857em;
   line-height: 1.4;
-  font-weight: bold;
+}
+a {
+  color: #2563eb;
+  text-decoration: underline;
 }
 </style>

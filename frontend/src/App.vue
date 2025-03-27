@@ -30,5 +30,5 @@ const isAuthenticated = computed(() => userStore.isAuthenticated);
 </template>
 
 <style>
-@import './assets/base.css';
+
 </style>

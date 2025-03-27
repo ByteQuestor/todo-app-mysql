@@ -61,6 +61,7 @@
     "npm-run-all2": "^6.2.3",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "sass-embedded": "^1.86.0",
     "start-server-and-test": "^2.0.8",
     "tailwindcss": "^4.0.17",
     "typescript": "~5.5.4",
