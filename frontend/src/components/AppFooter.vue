@@ -1,13 +1,17 @@
+<script setup lang="ts">
+const year = new Date().getFullYear();
+</script>
 <template>
   <footer class="border-t border-gray-200 dark:border-gray-700 sticky bottom-0 top-[100vh]">
     <div class="mx-4 items-centers grid grid-cols-1 justify-between gap-4 py-4 md:grid-cols-2">
-      <p class="text-sm/6 text-slate-600 dark:text-gray-400 max-md:text-center">
+      <p class="order-2 sm:order-1 text-sm/6 text-slate-600 dark:text-gray-400 max-md:text-center">
         ©
-        <!-- -->2025<!-- -->
-        Matinfo. Tout droits réserver.
+        <!-- -->{{ year
+        }}<!-- -->
+        Matinfo Labs. Tout droits réserver.
       </p>
       <div
-        class="flex items-center justify-center space-x-4 text-sm/6 font-semibold text-slate-900 md:justify-end dark:text-white"
+        class="order-1 sm:order-2 flex items-center justify-center space-x-4 text-sm/6 font-semibold text-slate-900 md:justify-end dark:text-white"
       >
         <a
           href="/privacy-policy"
@@ -15,9 +19,9 @@
         >
           Politique de confidentialité
         </a>
-        <div class="h-4 w-px bg-slate-200 dark:bg-slate-400 space-x-1"></div>
+        <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 space-x-1"></div>
         <a
-          href="#"
+          href="https://github.com/matinfo/todo-app-mysql"
           class="text-gray-700 dark:text-gray-400 hover:bg-gray-400 hover:text-white dark:hover:bg-gray-700 rounded-md px-2 py-1 text-sm font-medium"
         >
           <svg

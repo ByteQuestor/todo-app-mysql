@@ -1,35 +1,35 @@
-const { sequelize, DataTypes } = require("../config/database");
+const { sequelize, DataTypes } = require('../config/database');
 
 const Todo = sequelize.define(
-  "todo",
+  'todo',
   {
     text: {
-      type: DataTypes.TEXT("long"),
-      allowNull: false,
+      type: DataTypes.TEXT('long'),
+      allowNull: false
     },
     date: {
       type: DataTypes.DATEONLY,
-      allowNull: true,
+      allowNull: true
     },
     completed: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "users", // Assurez-vous que le nom du modèle est correct
-        key: "id",
+        model: 'users', // Assurez-vous que le nom du modèle est correct
+        key: 'id'
       },
-      onDelete: "CASCADE",
-    },
+      onDelete: 'CASCADE'
+    }
   },
   {
     indexes: [
       // add a FULL TEXT index
-      { type: "FULLTEXT", name: "text_idx", fields: ["text"] },
-    ],
+      { type: 'FULLTEXT', name: 'text_idx', fields: ['text'] }
+    ]
   }
 );
 

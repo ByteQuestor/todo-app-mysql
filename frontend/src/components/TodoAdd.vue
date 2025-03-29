@@ -7,7 +7,7 @@ import FormEditor from '@/components/forms/FormEditor.vue';
 
 const todoStore = useTodo();
 const text = ref('');
-const date = ref<Date | null>(null);
+const date = ref('');
 const errorMsg = ref('');
 const errorDate = ref(false);
 const errorText = ref(false);
@@ -32,7 +32,7 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
       errorDate.value = false;
       errorText.value = false;
       text.value = '';
-      date.value = null;
+      date.value = '';
     });
   } catch (e) {
     errorMsg.value = (e as { error: string }).error || 'Une erreur est survenue';
@@ -68,7 +68,7 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
         <button
           type="submit"
           @click="onSubmit({ date: date, text: text })"
-          class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-md px-5 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
           Ajouter la tâche
         </button>

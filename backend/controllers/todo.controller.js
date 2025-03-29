@@ -1,6 +1,6 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 
-const TodoModel = require("../models").Todo;
+const TodoModel = require('../models').Todo;
 
 const createTodo = async (req, res) => {
   const user_id = req.sub;
@@ -9,13 +9,13 @@ const createTodo = async (req, res) => {
     text: text,
     date: date,
     completed: false,
-    user_id: user_id,
+    user_id: user_id
   })
     .then((result) => {
       return res.status(201).json(result);
     })
     .catch((error) => {
-      console.error("ADD TODO: ", error);
+      console.error('ADD TODO: ', error);
       return res.status(500);
     });
 };
@@ -24,8 +24,8 @@ const getAllTodo = async (req, res) => {
   const user_id = req.sub;
   await TodoModel.findAll({
     where: { user_id: user_id },
-    order: [["date", "ASC"]],
-    attributes: { exclude: ["user_id"] },
+    order: [['date', 'ASC']],
+    attributes: { exclude: ['user_id'] }
   })
     .then((result) => {
       if (result) {
@@ -35,7 +35,7 @@ const getAllTodo = async (req, res) => {
       }
     })
     .catch((error) => {
-      console.error("GET ALL TODO: ", error);
+      console.error('GET ALL TODO: ', error);
       return res.status(500);
     });
 };
@@ -44,19 +44,18 @@ const editTodo = async (req, res) => {
   const user_id = req.sub;
   const query = { id: req.params.id, user_id: user_id };
   const data = req.body;
-  const todo = await TodoModel.findOne({ where: query });
-  if (todo) {
-    console.log(todo);
-    todo.completed = data.completed ? data.completed : false;
-    if (data.text !== "") data.text;
-    if (data.date !== "") data.date;
-    await todo
+  const result = await TodoModel.findOne({ where: query });
+  if (result) {
+    result.completed = data.completed ? data.completed : false;
+    result.text = data.text ? data.text : result.text;
+    result.date = data.date ? data.date : result.date;
+    await result
       .save()
       .then(() => {
-        return res.status(200).json(todo);
+        return res.status(200).json(result);
       })
       .catch((error) => {
-        console.error("UPDATE TODO: ", error);
+        console.error('UPDATE TODO: ', error);
         return res.status(500);
       });
   } else {
@@ -69,13 +68,13 @@ const deleteTodo = (req, res) => {
   const todo_id = req.params.id;
   const query = { id: todo_id, user_id: user_id };
   TodoModel.destroy({
-    where: query,
+    where: query
   })
     .then(() => {
       return res.status(200).json({ id: todo_id });
     })
     .catch((error) => {
-      console.error("DELETE TODO: ", error);
+      console.error('DELETE TODO: ', error);
       return res.status(500);
     });
 };
@@ -86,12 +85,12 @@ const getSearchTodo = async (req, res) => {
   await TodoModel.findAll({
     where: [
       {
-        user_id: user_id,
+        user_id: user_id
       },
-      Sequelize.literal(`MATCH (text) AGAINST ('*${query}*' IN BOOLEAN MODE)`),
+      Sequelize.literal(`MATCH (text) AGAINST ('*${query}*' IN BOOLEAN MODE)`)
     ],
-    order: [["date", "ASC"]],
-    attributes: { exclude: ["user_id"] },
+    order: [['date', 'ASC']],
+    attributes: { exclude: ['user_id'] }
   })
     .then((result) => {
       if (result) {
@@ -101,7 +100,7 @@ const getSearchTodo = async (req, res) => {
       }
     })
     .catch((error) => {
-      console.error("SEARCH TODO: ", error);
+      console.error('SEARCH TODO: ', error);
       return res.status(500);
     });
 };

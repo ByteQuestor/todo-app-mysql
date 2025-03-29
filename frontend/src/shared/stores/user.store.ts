@@ -42,11 +42,11 @@ export const useUser = defineStore('user', {
   },
   actions: {
     async login({ email, password }: { email: string; password: string }): Promise<ResponseData> {
-      const response = await login({ email, password });
+      const response: ResponseData = await login({ email, password });
       if ('user' in response && response.user) {
         this.currentUser = response.user as User;
       }
-      if (response.token) {
+      if ('token' in response && response.token) {
         this.token = response.token;
       }
 
@@ -56,6 +56,8 @@ export const useUser = defineStore('user', {
 
       // redirect to previous url or default to home page
       router.push(this.returnUrl || '/');
+
+      return response; // Ensure the function returns a value
     },
     logout() {
       this.currentUser = null;
@@ -84,7 +86,10 @@ export const useUser = defineStore('user', {
     },
     async updateUser(userForm: User) {
       if (this.currentUser) {
-        this.currentUser = await updateCurrentUser(userForm);
+        const response: ResponseData = await updateCurrentUser(userForm);
+        if ('user' in response && response.user) {
+          this.currentUser = response.user as User;
+        }
         this.loaded = true;
       }
     },

@@ -86,7 +86,7 @@ const editor = useEditor({
     :class="
       props.error
         ? 'bg-red-50 border-red-500 text-red-500 placeholder-red-500 focus:ring-red-500 dark:bg-gray-700 focus:border-red-500 dark:text-rose-500 dark:placeholder-rose-500 dark:border-rose-500 dark:focus:ring-rose-700 dark:focus:border-rose-700'
-        : 'bg-gray-50 border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+        : 'bg-gray-50 border-gray-300 text-gray-900 focus:ring-blue-700 focus:border-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-700 dark:focus:border-blue-700'
     "
   >
     <div class="tiptap" :class="props.error ? 'error' : ''">
@@ -98,7 +98,7 @@ const editor = useEditor({
           @click="editor.chain().focus().toggleBold().run()"
           :disabled="!editor.can().chain().focus().toggleBold().run()"
           :class="{ 'bg-gray-100 dark:text-black': editor.isActive('bold') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
           type="button"
           data-hs-editor-bold
         >
@@ -122,7 +122,7 @@ const editor = useEditor({
           @click="editor.chain().focus().toggleItalic().run()"
           :disabled="!editor.can().chain().focus().toggleItalic().run()"
           :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('italic') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
           type="button"
           data-hs-editor-italic=""
         >
@@ -147,7 +147,7 @@ const editor = useEditor({
           @click="editor.chain().focus().toggleUnderline().run()"
           :disabled="!editor.can().chain().focus().toggleUnderline().run()"
           :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('underline') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
           type="button"
           data-hs-editor-underline=""
         >
@@ -171,7 +171,7 @@ const editor = useEditor({
           @click="editor.chain().focus().toggleStrike().run()"
           :disabled="!editor.can().chain().focus().toggleStrike().run()"
           :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('strike') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
           type="button"
           data-hs-editor-strike=""
         >
@@ -196,37 +196,9 @@ const editor = useEditor({
           @click="editor.chain().focus().toggleBulletList().run()"
           :disabled="!editor.can().chain().focus().toggleBulletList().run()"
           :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('bulletList') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
           type="button"
           data-hs-editor-ol=""
-        >
-          <svg
-            class="shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="10" x2="21" y1="6" y2="6"></line>
-            <line x1="10" x2="21" y1="12" y2="12"></line>
-            <line x1="10" x2="21" y1="18" y2="18"></line>
-            <path d="M4 6h1v4"></path>
-            <path d="M4 10h2"></path>
-            <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path>
-          </svg>
-        </button>
-        <button
-          @click="editor.chain().focus().toggleOrderedList().run()"
-          :disabled="!editor.can().chain().focus().toggleOrderedList().run()"
-          :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('orderlist') }"
-          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-primary-700 dark:focus:bg-primary-700"
-          type="button"
-          data-hs-editor-ul=""
         >
           <svg
             class="shrink-0 size-4"
@@ -248,6 +220,34 @@ const editor = useEditor({
             <line x1="3" x2="3.01" y1="18" y2="18"></line>
           </svg>
         </button>
+        <button
+          @click="editor.chain().focus().toggleOrderedList().run()"
+          :disabled="!editor.can().chain().focus().toggleOrderedList().run()"
+          :class="{ 'bg-gray-100 dark:text-neutral-800': editor.isActive('orderlist') }"
+          class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-blue-700 dark:focus:bg-blue-700"
+          type="button"
+          data-hs-editor-ul=""
+        >
+          <svg
+            class="shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="10" x2="21" y1="6" y2="6"></line>
+            <line x1="10" x2="21" y1="12" y2="12"></line>
+            <line x1="10" x2="21" y1="18" y2="18"></line>
+            <path d="M4 6h1v4"></path>
+            <path d="M4 10h2"></path>
+            <path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"></path>
+          </svg>
+        </button>
       </div>
       <EditorContent :editor="editor" />
     </div>
@@ -259,6 +259,9 @@ const editor = useEditor({
 .tiptap p.is-editor-empty:first-child::before {
   color: #9ca3af;
   content: attr(data-placeholder);
+  float: left;
+  pointer-events: none;
+  height: 0;
 }
 .tiptap.error p.is-editor-empty:first-child::before {
   color: #ef4444;
@@ -269,7 +272,7 @@ const editor = useEditor({
 }
 
 .tiptap p.is-editor-empty:first-child::before {
-  @apply pointer-events-none float-left h-0;
+  @apply pointer-events-none float-left;
 }
 
 .ql-toolbar.ql-snow {

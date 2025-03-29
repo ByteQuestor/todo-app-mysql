@@ -1,10 +1,10 @@
 <template>
   <main
-    class="w-full bg-white rounded-lg shadow border md:mt-4 md:mb-4 xl:p-1 dark:bg-gray-800 dark:border-gray-700"
+    class="w-full bg-white rounded-lg shadow border md:mt-4 md:mb-4 xl:p-1 border-gray-200 dark:bg-gray-800 dark:border-gray-700"
   >
     <div class="text-center">
       <h1
-        class="mt-10 mb-2 leading-none tracking-tight text-gray-600 dark:text-white md:text-5xl lg:text-6xl"
+        class="mt-10 mb-2 leading-none tracking-tight text-slate-900 dark:text-white text-4xl sm:text-5xl"
       >
         Todo App
       </h1>

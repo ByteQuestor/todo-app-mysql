@@ -29,6 +29,4 @@ const isAuthenticated = computed(() => userStore.isAuthenticated);
   <AppFooter />
 </template>
 
-<style lang="scss">
-@use './assets/base.scss';
-</style>
+<style></style>

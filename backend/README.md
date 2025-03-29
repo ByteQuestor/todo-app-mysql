@@ -22,7 +22,7 @@ DB_URL="mysql://app_user:app_password@localhost:3306/db_todoapp"
 npm run start
 ```
 
-If you use an *.env* file in the `backend` folder then run the backend with:
+If you use an _.env_ file in the `backend` folder then run the backend with:
 
 ```sh
 npm run start:env
