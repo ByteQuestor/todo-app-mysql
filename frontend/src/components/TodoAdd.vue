@@ -26,7 +26,7 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
       }
       return;
     }
-    const todoForm: TodoForm = { date: formValue.date as string, text: formValue.text as string };
+    const todoForm: TodoForm = { date: new Date(formValue.date), text: formValue.text as string };
     await todoStore.createTodo(todoForm).then(() => {
       errorMsg.value = '';
       errorDate.value = false;

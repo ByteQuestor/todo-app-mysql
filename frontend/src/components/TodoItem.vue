@@ -49,7 +49,7 @@ const todoCompletedLocal = computed({
 
 <template>
   <div 
-    :class="todoCompletedLocal ? 'border-red-700' : 'border-green-700'"
+    :class="todoCompletedLocal ? 'border-red-500 dark:border-red-700' : 'border-green-500 dark:border-green-700'"
     class="w-full flex flex-col items-center justify-between p-2 text-sm leading-6 rounded-md border-2 bg-gray-200 dark:bg-gray-700 mb-2"
   >
     <div
@@ -77,18 +77,18 @@ const todoCompletedLocal = computed({
             toggle:
               'flex w-[68px] h-5 rounded-full relative cursor-pointer transition items-center box-content border-1 text-xs leading-none',
             toggleOn: 'bg-red-500 border-gray-400 justify-start text-gray-800',
-            toggleOff: 'bg-green-500 border-gray-200 justify-end text-gray-700',
+            toggleOff: 'bg-green-500 border-gray-400 justify-end text-gray-700',
             toggleOnDisabled:
-              'bg-red-500 border-gray-300 justify-start text-gray-400 cursor-not-allowed',
+              'bg-green-300 dark:bg-red-500 border-gray-300 justify-start text-gray-200 dark:text-gray-400 cursor-not-allowed',
             toggleOffDisabled:
-              'bg-green-500 border-gray-200 justify-end text-gray-400 cursor-not-allowed',
+              'bg-green-300 dark:bg-green-500 border-gray-200 justify-end text-gray-200 dark:text-gray-400 cursor-not-allowed',
             handle: 'inline-block bg-white w-5 h-5 top-0 rounded-full absolute transition-all',
             handleOn: 'left-full transform -translate-x-full',
             handleOff: 'left-0',
             handleOnDisabled: 'bg-gray-100 left-full transform -translate-x-full',
             handleOffDisabled: 'bg-gray-100 left-0',
             label:
-              'text-center font-bold w-8 border-box whitespace-nowrap select-none pl-1 pr-1 ml-[8px] mr-[15px]'
+              'text-gray-600 dark:text-gray-700 text-center font-bold w-8 border-box whitespace-nowrap select-none pl-1 pr-1 ml-[8px] mr-[15px]'
           }"
         >
           <template v-slot:label="{ checked, classList }">
