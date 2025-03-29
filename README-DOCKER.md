@@ -41,5 +41,5 @@ docker compose down -v
 
 ## Redis DB credentials
 
-- Root user : root
+- Root user : default
 - Root password : admin
