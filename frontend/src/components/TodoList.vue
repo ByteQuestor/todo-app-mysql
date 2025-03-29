@@ -112,12 +112,10 @@ const clearSearchTodo = async () => {
           <li
             v-for="todo in allTodo"
             :key="todo.id"
-            :class="todo.completed ? 'bg-rose-500' : 'bg-green-500'"
-            class="w-full flex flex-col items-center justify-between p-2 text-sm leading-6 rounded-md border border-gray-400 mb-2"
-          >
+            >
             <TodoItem
               :todoId="Number(todo.id)"
-              :todoDate="todo.date"
+              :todoDate="todo.date.toString()"
               :todoCompleted="todo.completed"
               :todoText="todo.text"
             />

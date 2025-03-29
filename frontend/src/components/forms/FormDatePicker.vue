@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, defineAsyncComponent } from 'vue';
+import {} from 'vue';
 import { useDark } from '@vueuse/core';
-import VueDatePicker from '@vuepic/vue-datepicker';
+// reduce bundle size by using defineAsyncComponent
+const VueDatePicker = defineAsyncComponent(() => import('@vuepic/vue-datepicker'));
+
 import '@vuepic/vue-datepicker/dist/main.css';
 
 const isDark = useDark({
@@ -11,7 +14,7 @@ const isDark = useDark({
 
 const props = defineProps({
   modelValue: {
-    type: Date,
+    type: String,
     default: null
   },
   name: {
@@ -37,8 +40,8 @@ const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const emit = defineEmits(['update:modelValue']);
 
 const value = computed({
-  get: () => props.modelValue,
-  set: (newValue: Date) => emit('update:modelValue', newValue)
+  get: () => props.modelValue || null,
+  set: (newValue) => emit('update:modelValue', newValue)
 });
 </script>
 

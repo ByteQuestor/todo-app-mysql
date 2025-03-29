@@ -6,8 +6,9 @@ const year = new Date().getFullYear();
     <div class="mx-4 items-centers grid grid-cols-1 justify-between gap-4 py-4 md:grid-cols-2">
       <p class="order-2 sm:order-1 text-sm/6 text-slate-600 dark:text-gray-400 max-md:text-center">
         ©
-        <!-- -->{{ year }}<!-- -->
-        Matinfo. Tout droits réserver.
+        <!-- -->{{ year
+        }}<!-- -->
+        Matinfo Labs. Tout droits réserver.
       </p>
       <div
         class="order-1 sm:order-2 flex items-center justify-center space-x-4 text-sm/6 font-semibold text-slate-900 md:justify-end dark:text-white"

@@ -44,16 +44,15 @@ const editTodo = async (req, res) => {
   const user_id = req.sub;
   const query = { id: req.params.id, user_id: user_id };
   const data = req.body;
-  const todo = await TodoModel.findOne({ where: query });
-  if (todo) {
-    console.log(todo);
-    todo.completed = data.completed ? data.completed : false;
-    if (data.text !== "") data.text;
-    if (data.date !== "") data.date;
-    await todo
+  const result = await TodoModel.findOne({ where: query });
+  if (result) {
+    result.completed = data.completed ? data.completed : false;
+    result.text = data.text ? data.text : result.text;
+    result.date = data.date ? data.date : result.date;
+    await result
       .save()
       .then(() => {
-        return res.status(200).json(todo);
+        return res.status(200).json(result);
       })
       .catch((error) => {
         console.error("UPDATE TODO: ", error);

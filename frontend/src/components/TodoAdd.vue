@@ -7,7 +7,7 @@ import FormEditor from '@/components/forms/FormEditor.vue';
 
 const todoStore = useTodo();
 const text = ref('');
-const date = ref<Date | null>(null);
+const date = ref('');
 const errorMsg = ref('');
 const errorDate = ref(false);
 const errorText = ref(false);
@@ -26,13 +26,13 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
       }
       return;
     }
-    const todoForm: TodoForm = { date: new Date(formValue.date), text: formValue.text as string };
+    const todoForm: TodoForm = { date: formValue.date as string, text: formValue.text as string };
     await todoStore.createTodo(todoForm).then(() => {
       errorMsg.value = '';
       errorDate.value = false;
       errorText.value = false;
       text.value = '';
-      date.value = null;
+      date.value = '';
     });
   } catch (e) {
     errorMsg.value = (e as { error: string }).error || 'Une erreur est survenue';
