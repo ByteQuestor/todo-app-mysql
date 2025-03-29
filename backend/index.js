@@ -16,7 +16,7 @@ const TodoModel = require('./models').Todo;
 const initApp = async () => {
   try {
     await db.authenticate();
-    console.log("La connexion a la base de données été établie avec succès.");
+    console.log('La connexion a la base de données été établie avec succès.');
 
     // Synchronize the DB models
     UserModel.sync({ alter: true });
@@ -38,10 +38,12 @@ const initApp = async () => {
 
     // Start the web server on the specified port.
     app.listen(port, () => {
-      console.info(`🚀🚀 Le serveur est démarré sur le port ${port} et avec l’environnement: ${env} 🚀🚀`);
+      console.info(
+        `🚀🚀 Le serveur est démarré sur le port ${port} et avec l’environnement: ${env} 🚀🚀`
+      );
     });
   } catch (error) {
-    console.error("Impossible de se connecter à la base de données", error);
+    console.error('Impossible de se connecter à la base de données', error);
   }
 };
 

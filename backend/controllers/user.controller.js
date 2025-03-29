@@ -1,5 +1,5 @@
-const bcrypt = require("bcrypt");
-const UserModel = require("../models").User;
+const bcrypt = require('bcrypt');
+const UserModel = require('../models').User;
 
 const cleanUser = (user) => {
   // eslint-disable-next-line no-unused-vars
@@ -13,16 +13,16 @@ const createUser = async (req, res) => {
   const { email, password } = req.body;
   await UserModel.create({
     email: email.toLowerCase(),
-    password: await bcrypt.hash(password, 8),
+    password: await bcrypt.hash(password, 8)
   })
     .then((result) => {
       return res.status(201).json(cleanUser(result));
     })
     .catch((error) => {
-      console.error("ADD USER: ", error);
-      if (error && error.name === "SequelizeUniqueConstraintError") {
+      console.error('ADD USER: ', error);
+      if (error && error.name === 'SequelizeUniqueConstraintError') {
         return res.status(409).json({
-          message: "Un compte avec cet email exist déjà !",
+          message: 'Un compte avec cet email exist déjà !'
         });
       } else {
         return res.status(500);
@@ -34,7 +34,7 @@ const getUser = async (req, res) => {
   const user_id = req.sub;
   await UserModel.findOne({
     where: { id: user_id },
-    attributes: { exclude: ["id", "password"] },
+    attributes: { exclude: ['id', 'password'] }
   })
     .then((result) => {
       if (result) {
@@ -44,7 +44,7 @@ const getUser = async (req, res) => {
       }
     })
     .catch((error) => {
-      console.error("GET USER: ", error);
+      console.error('GET USER: ', error);
       return res.status(500);
     });
 };
@@ -65,7 +65,7 @@ const editUser = async (req, res) => {
         return res.status(200).json(result);
       })
       .catch((error) => {
-        console.error("UPDATE USER: ", error);
+        console.error('UPDATE USER: ', error);
         return res.status(500);
       });
   } else {
@@ -77,13 +77,13 @@ const deleteCurrentUser = (req, res) => {
   const user_id = req.sub;
   const query = { id: user_id };
   UserModel.destroy({
-    where: query,
+    where: query
   })
     .then(() => {
       return res.status(200).json({ id: user_id });
     })
     .catch((error) => {
-      console.error("DELETE USER: ", error);
+      console.error('DELETE USER: ', error);
       return res.status(500);
     });
 };
