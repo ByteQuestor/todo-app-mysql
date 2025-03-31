@@ -1,6 +1,6 @@
 const { sequelize, DataTypes } = require('../config/database');
 
-const Todo = sequelize.define(
+const TodoModel = sequelize.define(
   'todo',
   {
     text: {
@@ -33,4 +33,4 @@ const Todo = sequelize.define(
   }
 );
 
-module.exports = Todo;
+module.exports = TodoModel;

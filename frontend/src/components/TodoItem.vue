@@ -48,8 +48,12 @@ const todoCompletedLocal = computed({
 </script>
 
 <template>
-  <div 
-    :class="todoCompletedLocal ? 'border-red-500 dark:border-red-700' : 'border-green-500 dark:border-green-700'"
+  <div
+    :class="
+      todoCompletedLocal
+        ? 'border-red-500 dark:border-red-700'
+        : 'border-green-500 dark:border-green-700'
+    "
     class="w-full flex flex-col items-center justify-between p-2 text-sm leading-6 rounded-md border-2 bg-gray-200 dark:bg-gray-700 mb-2"
   >
     <div

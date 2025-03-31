@@ -10,8 +10,7 @@ const env = process.env.NODE_ENV || 'development';
 const db = require('./config/database').sequelize;
 const router = require('./routes');
 
-const UserModel = require('./models').User;
-const TodoModel = require('./models').Todo;
+const { UserModel, TodoModel } = require('./models');
 
 const initApp = async () => {
   try {

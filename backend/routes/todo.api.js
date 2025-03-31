@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { authenticateToken } = require('../middlewares');
 const { createTodo, getAllTodo, getSearchTodo, editTodo, deleteTodo } =
-  require('../controllers').Todo;
+  require('../controllers').TodoController;
 
 // Handle the API request
 router.post('/', authenticateToken, createTodo);

@@ -1,5 +1,5 @@
-const Auth = require('./auth.controller');
-const User = require('./user.controller');
-const Todo = require('./todo.controller');
+const AuthController = require('./auth.controller');
+const UserController = require('./user.controller');
+const TodoController = require('./todo.controller');
 
-module.exports = { Auth, User, Todo };
+module.exports = { AuthController, UserController, TodoController };

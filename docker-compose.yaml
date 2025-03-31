@@ -1,7 +1,7 @@
 
 services:
   mysql:
-    image: mysql:8
+    image: mysql:lts
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin
@@ -15,6 +15,7 @@ services:
 
   redis:
     image: redis/redis-stack:7.2.0-v14
+    container_name: redis
     ports:
       - 6379:6379
       - 8001:8001
@@ -27,7 +28,7 @@ services:
       - redis_data:/data
   
   mongo:
-    image: mongo
+    image: mongo:8.0.6
     container_name: mongo
     hostname: mongodb
     restart: always
@@ -38,7 +39,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: admin
     volumes:
       - mongo_data:/data/db
-      - ./backupdb:/backupdb
+      - ./data/mongo:/backupdb
 
 
 volumes:
