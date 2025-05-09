@@ -6,10 +6,10 @@
 npm install
 ```
 
-2，为后端添加环境变量
+2，创建数据库
 
-```tex
-DB_URL="mysql://root:000000@localhost:3306/wzy_todoapp"
+```sql
+CREATE DATABASE `wzy_todoapp` DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci;
 ```
 
 3，运行命令

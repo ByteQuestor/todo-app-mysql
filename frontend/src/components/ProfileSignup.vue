@@ -15,13 +15,13 @@ const errorMsg = ref('');
 
 // form validation rules
 const schema = Yup.object().shape({
-  email: Yup.string().email('Format email incorrect').required('Vous devez renseigner ce champ'),
+  email: Yup.string().email('电子邮件格式不正确').required('您必须填写这个字段'),
   password: Yup.string()
-    .min(8, 'Le mot de passe doit faire au moins 8 caractères')
-    .required('Vous devez renseigner ce champ'),
+    .min(8, '密码必须至少有 8 个字符')
+    .required('您必须填写这个字段'),
   confirmation: Yup.string()
-    .required('Vous devez renseigner ce champ')
-    .oneOf([Yup.ref('password')], 'Les mots de passe ne correspondent pas')
+    .required('您必须填写这个字段')
+    .oneOf([Yup.ref('password')], '密码不一致')
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,7 +49,7 @@ const onSubmit = async (formValues: Record<string, any>) => {
       <h1
         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
       >
-        Créez votre compte
+        创建您的账户
       </h1>
       <p v-if="errorMsg">
         <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
@@ -59,27 +59,27 @@ const onSubmit = async (formValues: Record<string, any>) => {
       </p>
       <Form @submit="onSubmit" :validation-schema="schema" class="space-y-4 md:space-y-6">
         <div>
-          <FormInput name="email" type="email" label="Votre email" />
+          <FormInput name="email" type="email" label="您的电子邮件" />
         </div>
         <div>
-          <FormInput name="password" type="password" label="Mot de passe" />
+          <FormInput name="password" type="password" label="密码" />
         </div>
         <div>
-          <FormInput name="confirmation" type="password" label="Confirmer votre mot de passe" />
+          <FormInput name="confirmation" type="password" label="确认您的密码" />
         </div>
         <button
           type="submit"
           :disabled="loading"
           class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
-          Créer un compte
+          创建一个账户
         </button>
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-          Avez-vous déjà un compte?
+          您已经有一个账户了吗？
           <a
             href="/login"
             class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Connectez-vous</a
+            >去登录</a
           >
         </p>
       </Form>
