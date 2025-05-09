@@ -8,8 +8,8 @@ import AppFooter from './components/AppFooter.vue';
 const userStore = useUser();
 
 const menu = computed(() => [
-  { name: 'Mes Tâches', path: '/', display: !!userStore.isAuthenticated },
-  { name: 'À Propos', path: '/about', display: true }
+  { name: '我的任务', path: '/', display: !!userStore.isAuthenticated },
+  { name: '关于', path: '/about', display: true }
 ]);
 
 const isAuthenticated = computed(() => userStore.isAuthenticated);

@@ -13,8 +13,8 @@ const userStore = useUser();
 const errorMsg = ref('');
 
 const schema = Yup.object().shape({
-  email: Yup.string().email('Format email incorrect').required('Vous devez renseigner ce champ'),
-  password: Yup.string().required('Vous devez renseigner ce champ')
+  email: Yup.string().email('不正确的电子邮件格式。').required('您必须填写此字段。'),
+  password: Yup.string().required('您必须填写此字段。')
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,7 +38,7 @@ const onSubmit = async (formValues: Record<string, any>) => {
       <h1
         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
       >
-        Connectez-vous
+        请登录。
       </h1>
       <p v-if="errorMsg">
         <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
@@ -48,15 +48,15 @@ const onSubmit = async (formValues: Record<string, any>) => {
       </p>
       <Form @submit="onSubmit" :validation-schema="schema" class="space-y-4 md:space-y-6">
         <div>
-          <FormInput name="email" type="email" label="Votre email" />
+          <FormInput name="email" type="email" label="您的电子邮件。" />
         </div>
         <div>
-          <FormInput name="password" type="password" label="Mot de passe" />
+          <FormInput name="password" type="password" label="密码" />
         </div>
         <div class="flex items-center justify-between">
           <div class="text-sm">
             <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-              >Mot de passe oublier ?</a
+              >忘记密码了？</a
             >
           </div>
         </div>
@@ -64,14 +64,14 @@ const onSubmit = async (formValues: Record<string, any>) => {
           type="submit"
           class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
-          Connecter
+          登录
         </button>
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-          Vous n'avez pas encore un compte?
+          您还没有账户吗？
           <a
             href="/register"
             class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Créer votre compte</a
+            >创建一个吧</a
           >
         </p>
       </Form>

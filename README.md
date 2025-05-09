@@ -1,34 +1,29 @@
-# todo-app
+# 运行步骤
 
-This simple Todo app use in frontend responsive made with Vue3 using TypeScript and 
-TailWinCSS for the HTML view.
+1，在`front`和`backend`里面同时运行
 
-The backend API is made with Node.js 20+ and Express and MySQL for data storage.
+```shell
+npm install
+```
 
-The frontend offer the possibility to switch from *Dark* ot *Light* theme.
+2，为后端添加环境变量
 
-To run respectively the backend and the frontend, find for each the instruction in the README files.
+```tex
+DB_URL="mysql://root:000000@localhost:3306/wzy_todoapp"
+```
 
-- [Backend](./backend/README.md)
-- [Frontend](./frontend/README.md)
+3，运行命令
 
-## The interface
++ `front`
 
-### Todos
+  ```shell
+  npm run start
+  ```
 
-![Todos](./img/tasks.png)
++ `bacnend`
 
-### Login
+  ```shell
+  npm run start:env
+  ```
 
-![Login](./img/login.png)
-
-### Register
-
-![Register](./img/register.png)
-
-### Profile
-
-![Profile](./img/profile.png)
-
-
-
+  

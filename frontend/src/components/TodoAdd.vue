@@ -15,7 +15,7 @@ const errorText = ref(false);
 const onSubmit = async (formValue: { date: string; text: string }) => {
   try {
     if (!formValue.date || !formValue.text) {
-      errorMsg.value = 'Veuillez renseigner tous les champs';
+      errorMsg.value = '请填写所有字段。';
       errorDate.value = false;
       errorText.value = false;
       if (!formValue.date) {
@@ -35,7 +35,7 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
       date.value = '';
     });
   } catch (e) {
-    errorMsg.value = (e as { error: string }).error || 'Une erreur est survenue';
+    errorMsg.value = (e as { error: string }).error || '发生了一个错误。';
   }
 };
 </script>
@@ -48,7 +48,7 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
       <h2
         class="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
       >
-        Nouvelle tâche
+        新任务
       </h2>
       <p v-if="errorMsg">
         <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
@@ -62,15 +62,15 @@ const onSubmit = async (formValue: { date: string; text: string }) => {
           mode="date"
           name="date"
           :error="errorDate"
-          placeholder="jj/mm/aaaa"
+          placeholder="点击选择时间"
         />
-        <FormEditor v-model="text" :error="errorText" placeholder="Description ..." />
+        <FormEditor v-model="text" :error="errorText" placeholder="任务详情 ..." />
         <button
           type="submit"
           @click="onSubmit({ date: date, text: text })"
           class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         >
-          Ajouter la tâche
+          添加任务
         </button>
       </div>
     </div>

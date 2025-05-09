@@ -121,7 +121,7 @@ const clearSearchTodo = async () => {
             class="flex items-center justify-between py-4 pr-5 text-md text-grey-900 dark:text-white leading-6"
             v-if="todoStore.allTodo && todoStore.allTodo.length === 0"
           >
-            Aucune tâche ...
+            没有任务 ...
           </li>
         </ul>
       </template>
