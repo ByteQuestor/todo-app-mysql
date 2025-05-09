@@ -13,7 +13,7 @@ const { currentUser } = userStore;
 const loading = ref(false);
 
 const schema = Yup.object().shape({
-  name: Yup.string().required('Vous devez renseigner ce champ')
+  name: Yup.string().required('您必须填写这个字段')
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -53,7 +53,7 @@ const location = computed(() => currentUser?.location);
       <h1
         class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
       >
-        Mon Profile
+        个人资料
       </h1>
       <p class="text-left mt-2 text-md text-gray-600 dark:text-gray-400">
         {{ currentUser?.email }}
@@ -64,23 +64,23 @@ const location = computed(() => currentUser?.location);
         class="space-y-4 md:space-y-6 grid grid-col gap-x-4 sm:grid-cols-4"
       >
         <div class="col-span-4">
-          <FormInput name="name" :value="name" type="text" label="Votre nom" />
+          <FormInput name="name" :value="name" type="text" label="您的名字（称呼）" />
         </div>
         <div class="col-span-4">
-          <FormInput name="address" :value="address" type="text" label="Adresse" />
+          <FormInput name="address" :value="address" type="text" label="地址" />
         </div>
         <div class="col-span col-start-1">
-          <FormInput name="zip" :value="zip" type="text" label="NPA" />
+          <FormInput name="zip" :value="zip" type="text" label="邮编" />
         </div>
         <div class="col-span-3">
-          <FormInput name="location" :value="location" type="text" label="Lieu" />
+          <FormInput name="location" :value="location" type="text" label="地点" />
         </div>
         <div class="col-span-4">
           <button
             type="submit"
             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
-            Modifier
+            修改
           </button>
           <div class="or"><span>ou</span></div>
           <p class="text-center text-md text-gray-500">
@@ -88,7 +88,7 @@ const location = computed(() => currentUser?.location);
               @click="onDelete"
               href="#"
               class="font-semibold leading-6 text-rose-500 hover:text-rose-400"
-              >Supprimer votre compte</a
+              >删除您的账户</a
             >
           </p>
         </div>

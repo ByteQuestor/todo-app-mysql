@@ -81,7 +81,7 @@ const imgUrlProfile = new URL('../assets/funny-smile.png', import.meta.url).href
                 class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Ouvrir le menu</span>
+                <span class="sr-only">打开菜单</span>
                 <img class="h-8 w-8 rounded-full" :src="imgUrlProfile" alt="Profile" />
               </MenuButton>
             </div>
@@ -102,7 +102,7 @@ const imgUrlProfile = new URL('../assets/funny-smile.png', import.meta.url).href
                     :class="[active ? 'bg-gray-100' : '', 'flex px-4 py-2 text-sm text-gray-700']"
                   >
                     <UserIcon class="h-5 w-5" />
-                    Mon Profile</a
+                    个人资料</a
                   >
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
@@ -112,7 +112,7 @@ const imgUrlProfile = new URL('../assets/funny-smile.png', import.meta.url).href
                     :class="[active ? 'bg-gray-100' : '', 'flex px-4 py-2 text-sm text-gray-700']"
                   >
                     <ArrowRightStartOnRectangleIcon class="h-5 w-5" />
-                    Déconnexion</a
+                    退出登录</a
                   >
                 </MenuItem>
               </MenuItems>
